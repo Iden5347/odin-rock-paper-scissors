@@ -2,10 +2,19 @@
 <html lang="en">
     <head>
         <link rel="stylesheet" href="style.css">
-        <script src="main.js"></script>
+        <script src="main.js" defer></script>
         <title>Rock Paper Scissors</title>
     </head>
     <body>
-        Play Rock Paper Scissors!
+        <h1>Play Rock Paper Scissors!</h1>
+        <div id="container">
+            <div id="horizontal-flex">
+                <button onclick="playHand('rock')" id="rock">Rock</button>
+                <button onclick="playHand('paper')" id="paper">Paper</button>
+                <button onclick="playHand('scissors')" id="scissors">Scissors</button>
+            </div>
+            <div id="scores"></div>
+            <div id="decision"></div>
+        </div>
     </body>
 </html>

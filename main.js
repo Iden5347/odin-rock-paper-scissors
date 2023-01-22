@@ -16,42 +16,32 @@ function decideWinner(playerChoice, computerChoice) {
         return 1;
     }
 }
-
+const scores = document.querySelector('#scores');
+const decision = document.querySelector('#decision');
+let playerWins = 0;
+let computerWins = 0;
 function playHand(move) {
     let winner = decideWinner(move, getComputerChoice());
-    return winner;
-}
-
-function playGame() {
-    let playerWins = 0;
-    let computerWins = 0;
-    while (playerWins < 5 && computerWins < 5) {
-        let move = "rock";
-        /*while(move == null){
-            //move = prompt("Pick a move: ");
-            if (move != "rock" || move != "scissors" || move != "paper") {
-                move = null;
-                console.log("play a valid move");
-            }
-        }*/
-        let winner = playHand(move);
-        if (winner == 0) {
-            console.log("you tied");
-        }
-        if (winner == 1) {
-            console.log("you won");
-            playerWins++;
-        }
-        if (winner == -1) {
-            console.log("you lost");
-            computerWins++;
-        }
+    scores.textContent = `Player: ${playerWins}    Computer: ${computerWins}`;
+    if (winner == 0) {
+        decision.textContent = "you tied";
+    }
+    if (winner == 1) {
+        decision.textContent = "you won";
+        playerWins++;
+    }
+    if (winner == -1) {
+        decision.textContent = "you lost";
+        computerWins++;
     }
     if (playerWins == 5) {
-        console.log("Player wins!");
+        decision.textContent = "player wins";
+        playerWins = 0;
+        computerWins = 0;
     }
     else if (computerWins == 5) {
-        console.log("Computer wins!");
+        decision.textContent = "computer wins";
+        playerWins = 0;
+        computerWins = 0;
     }
 }
-playGame();
