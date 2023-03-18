@@ -1,2 +1,2 @@
-# odin-rock-paper-scissors
-Practice javascript with rock paper scissors.
+# Rock Paper Scissors
+Practice javascript with rock paper scissors for The Odin Project.
